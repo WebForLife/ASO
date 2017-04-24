@@ -1,0 +1,1549 @@
+@charset "utf-8";
+//包含Boostrap所有的Less源文件
+@import "bootstrap.less";
+
+//common样式
+body {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif, '华文细黑';
+  background: #f0eff5;
+  position: relative;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+  font-size: 100%;
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+  display: block;
+}
+
+img {
+  border: none;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.clearfix:after {
+  content: "\200B";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+input {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*元素居中*/
+.txt_ac {
+  text-align: center;
+}
+
+.txt_al {
+  text-align: left;
+}
+
+.txt_ar {
+  text-align: right;
+}
+
+.ver_at {
+  vertical-align: top;
+}
+
+.ver_am {
+  vertical-align: middle;
+}
+
+.ver_ab {
+  vertical-align: bottom;
+}
+
+/*元素显示方式*/
+.db {
+  display: block;
+}
+
+.di {
+  display: inline;
+}
+
+.dn {
+  display: none;
+}
+
+.dib {
+  display: inline-block;
+}
+
+/*元素定位*/
+.posi_r {
+  position: relative;
+}
+
+.posi_a {
+  position: absolute;
+}
+
+.posi_f {
+  position: fixed;
+}
+
+/*浮动*/
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+//自定义样式
+
+//小屏下显示和隐藏
+@media screen and (max-width: 480px) {
+  .xs-dn {
+    display: none;
+  }
+
+  .xs-show {
+    display: block;
+  }
+}
+
+//header样式
+header {
+  .navbar {
+    background: #fff;
+    .logo {
+      font-size: 16px;
+      color: #555;
+      letter-spacing: 0;
+      img {
+        display: inline-block;
+        width: 20px;
+        height: 23px;
+      }
+    }
+    .navbar-toggle {
+      border: none;
+    }
+    .navbar-nav {
+      li a:hover, li.on a, .active a:hover {
+        color: #579FC3;
+      }
+      li a {
+        color: #555;
+      }
+      .active a {
+        background-color: #fff;
+      }
+      //大屏
+      @media screen and (min-width: 768px) {
+        margin-left: 50px;
+        li {
+          margin-right: 70px;
+        }
+
+        .dropdown-menu {
+          width: 150px;
+          min-width: 150px;
+        }
+      }
+      //iPad
+      @media screen and (max-width: 768px) and (min-width: 480px) {
+        margin-left: 50px;
+        li {
+          margin-right: 25px;
+        }
+      }
+      //手机
+      @media screen and (max-width: 480px) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+//footer样式
+footer {
+  width: 100%;
+  height: 72px;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid #eee;
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    @media screen and (max-width: 480px) {
+      font-size: 12px;
+    }
+    font-weight: 500;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 72px;
+  }
+}
+
+//首页主体样式
+section.index {
+  margin-top: 50px;
+  //大banner
+  .banner {
+    height: 500px;
+    .banner_text {
+      h1 {
+        font-size: 58px;
+        color: #FFFFFF;
+        line-height: 82px;
+      }
+      p {
+        font-size: 30px;
+        color: #FFFFFF;
+        line-height: 42px;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      background: url("../images/science.png") no-repeat;
+      background-size: cover;
+      .banner_text {
+        margin-top: 157px;
+      }
+    }
+    @media screen and (max-width: 768px) and (min-width: 480px) {
+      background: url("../images/science.png") 50% 50% no-repeat;
+      background-size: cover;
+      .banner_text {
+        margin: 157px 0 0 130px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      height: 205px;
+      background: url("../images/science.png") 50% 50% no-repeat;
+      background-size: cover;
+      .banner_text {
+        margin: 50px 0 0 50px;
+        h1 {
+          font-size: 24px;
+          line-height: 30px;
+        }
+        p {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+  //公告
+  .broadcast {
+    width: 100%;
+    height: 50px;
+    background: #fafafa;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #ECECEC;
+    a {
+      color: #686868;
+    }
+    a:hover, a.on {
+      color: #579FC3;
+    }
+  }
+  //业务内容
+  .ios_business, .android_business, .hand_travel {
+    width: 100%;
+    height: 464px;
+    .title {
+      margin: 50px auto 0;
+      width: 145px;
+      overflow: hidden;
+      padding: 5px 0;
+      border-bottom: 5px solid #579FC3;
+      h1 {
+        font-size: 36px;
+        color: #2F619A;
+        letter-spacing: 0;
+        line-height: 36px;
+      }
+    }
+    .content {
+      margin: 50px auto 0;
+      text-align: center;
+      width: 100%;
+      display: table; /* 调教webkit*/
+      word-spacing: -1em;
+      img {
+        width: 110px;
+        height: 110px;
+        display: inline-block;
+        margin: 0 auto;
+      }
+      p {
+        margin-top: 20px;
+        font-size: 28px;
+        color: #4B6B9C;
+        letter-spacing: 0;
+      }
+      li {
+        width: 20%;
+        box-sizing: border-box;
+        word-spacing: 0;
+        margin: 0;
+        text-align: center;
+      }
+      @media screen and (max-width: 768px) and (min-width: 480px) {
+        li {
+          width: 33%;
+        }
+
+        li:nth-child(4), li:nth-child(5) {
+          margin-top: 30px;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        li {
+          width: 50%;
+        }
+
+        li:nth-child(4), li:nth-child(5) {
+          margin-top: 30px;
+        }
+      }
+      @media screen and(max-width: 320px) {
+        li {
+          p {
+            font-size: 26px;
+          }
+        }
+      }
+    }
+  }
+  .ios_business {
+    background: #fff;
+    @media screen and (max-width: 768px) and (min-width: 480px) {
+      height: 700px;
+    }
+    @media screen and (max-width: 480px) {
+      height: 850px;
+    }
+  }
+  .android_business {
+    background: #C2DCF6;
+    @media screen and (max-width: 480px) {
+      height: 850px;
+      .content > div:not(:first-child) {
+        margin-top: 30px;
+      }
+    }
+  }
+  .hand_travel {
+    background: url("../images/hand_travel_bg.png") no-repeat;
+    background-size: cover;
+    @media screen and (min-width: 480px) and (max-width: 768px) {
+      background: url("../images/hand_travel_bg.png") 50% 50% no-repeat;
+    }
+    @media screen and (max-width: 480px) {
+      background: url("../images/hand_travel_bg.png") 50% 50% no-repeat;
+    }
+    .title {
+      border-bottom: 5px solid #fff;
+      h1 {
+        color: #fff;
+      }
+    }
+    .content {
+      text-align: left;
+      h1 {
+        font-size: 36px;
+        color: #fff;
+        line-height: 40px;
+        margin-top: 10px;
+      }
+      p {
+        font-size: 20px;
+        color: #fff;
+        line-height: 25px;
+        margin-bottom: 20px;
+      }
+      a {
+        width: 100px;
+        height: 40px;
+        padding: 5px 10px;
+        border: 1px solid #fff;
+        text-align: center;
+        line-height: 30px;
+        font-size: 16px;
+      }
+      a:hover {
+        color: #fff;
+      }
+      img {
+        width: 415px;
+        height: 225px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+//关于我们主体样式
+section.about_our {
+  margin-top: 50px;
+  //大banner
+  .banner {
+    width: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(-162deg, #68C3DD 12%, #79B5EB 94%);
+    background-size: cover;
+    .banner_box {
+      margin-top: 165px;
+      .banner_img {
+        padding-top: 30px;
+        img {
+          width: 100px;
+          height: 115px;
+        }
+        @media screen and (max-width: 767px) {
+          img {
+            width: 80px;
+            height: 92px;
+          }
+        }
+      }
+      .banner_text {
+        padding-left: 30px;
+        h1 {
+          font-size: 48px;
+          color: #FFFFFF;
+          line-height: 82px;
+        }
+        p {
+          font-size: 26px;
+          color: #FFFFFF;
+          line-height: 42px;
+        }
+        @media screen and (max-width: 479px) {
+          h1 {
+            font-size: 24px;
+            line-height: 30px;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 768px) {
+      height: 500px;
+      .banner_box {
+        .banner_text {
+          padding-left: 30px;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) and (min-width: 480px) {
+      height: 500px;
+    }
+    @media screen and (max-width: 480px) and (min-width: 376px) {
+      height: 205px;
+      .banner_box {
+        margin-top: 20px;
+        .banner_text {
+          padding-top: 30px;
+        }
+      }
+    }
+    @media screen and (max-width: 375px) and (min-width: 321px) {
+      .banner_box {
+        margin-top: 10px;
+        .banner_img {
+          padding-top: 10px;
+        }
+        .banner_text {
+          padding-top: 0;
+        }
+      }
+    }
+    @media screen and (max-width: 321px) {
+      .banner_box {
+        margin-top: 0;
+        .banner_img {
+          padding-top: 25px;
+        }
+        .banner_text {
+          padding-left: 45px;
+          padding-top: 0;
+        }
+      }
+    }
+  }
+  //关于我们
+  .about_us, .connect_us {
+    width: 100%;
+    .title {
+      margin-top: 50px;
+      width: 145px;
+      overflow: hidden;
+      padding: 5px 0;
+      h1 {
+        font-size: 36px;
+        letter-spacing: 0;
+        line-height: 36px;
+      }
+    }
+    .content_text {
+      margin-top: 40px;
+    }
+  }
+  .about_us {
+    background: #fff;
+    height: 500px;
+    .title {
+      border-bottom: 5px solid #5E98D1;
+      h1 {
+        color: #2F619A;
+      }
+    }
+    .content_text {
+      p {
+        font-size: 20px;
+        color: #30619A;
+        letter-spacing: 0;
+        line-height: 28px;
+        margin-bottom: 30px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      height: 400px;
+      .title {
+        margin-top: 0;
+        width: 110px;
+        h1 {
+          font-size: 26px;
+          line-height: 26px;
+        }
+      }
+
+      .content_text {
+        margin-top: 20px;
+        p {
+          font-size: 15px;
+          color: #30619A;
+          letter-spacing: 1px;
+          line-height: 18px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    @media screen and (max-width: 321px) {
+      height: 450px;
+    }
+  }
+  .connect_us {
+    background: #F6F6F6;
+    height: 300px;
+    .title {
+      border-bottom: 5px solid #6E6E6E;
+      h1 {
+        color: #666666;
+      }
+    }
+    .content_text {
+      p {
+        font-size: 20px;
+        color: #000;
+        line-height: 24px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      height: 160px;
+      .title {
+        margin-top: 0;
+        width: 110px;
+        h1 {
+          font-size: 26px;
+          line-height: 26px;
+        }
+      }
+
+      .content_text {
+        margin-top: 20px;
+        p {
+          font-size: 15px;
+          color: #30619A;
+          letter-spacing: 1px;
+          line-height: 18px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+//苹果积分墙主体样式
+section.ios_integral_wall {
+  margin-top: 50px;
+  //大banner
+  .banner {
+    width: 100%;
+    height: 500px;
+    box-sizing: border-box;
+    background-image: linear-gradient(-162deg, #68C3DD 12%, #79B5EB 94%);
+    background-size: cover;
+    .banner_box {
+      margin-top: 100px;
+      .banner_img {
+        padding-left: 30px;
+        img {
+          width: 270px;
+          height: 270px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      .banner_text {
+        padding-left: 30px;
+        padding-top: 15px;
+        h1 {
+          font-size: 48px;
+          color: #FFFFFF;
+          line-height: 82px;
+        }
+        p {
+          font-size: 26px;
+          color: #FFFFFF;
+          line-height: 42px;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      height: 300px;
+      .banner_box {
+        margin: 20px 0;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      height: 230px;
+      .banner_box {
+        .banner_img {
+          padding: 0;
+          img {
+            width: 170px;
+            height: 170px;
+          }
+        }
+        .banner_text {
+          padding: 0;
+          h1 {
+            font-size: 34px;
+            line-height: 42px;
+          }
+          p {
+            font-size: 26px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 320px) {
+      height: 200px;
+      .banner_box {
+        .banner_img {
+          padding: 0;
+          img {
+            width: 150px;
+            height: 150px;
+          }
+        }
+        .banner_text {
+          padding: 0;
+          h1 {
+            font-size: 24px;
+            line-height: 30px;
+          }
+          p {
+            font-size: 18px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+  //业务特点，投放量级取决事项，积分墙分辨
+  .business_feature, .put_base, .integral_wall_res, .charge_type, .examples {
+    width: 100%;
+    .title {
+      margin-top: 20px;
+      overflow: hidden;
+      padding: 5px 0;
+      b {
+        font-size: 36px;
+        line-height: 60px;
+        padding-bottom: 10px;
+        border-bottom: 5px solid #5E98D1;
+        color: #2F619A;
+      }
+    }
+    .content_text {
+      margin-top: 20px;
+      img {
+        width: 150px;
+        height: 150px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    @media screen and (max-width: 320px) {
+      .title {
+        b {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  //业务特点
+  .business_feature {
+    height: 600px;
+    .content_text {
+      h4 {
+        font-size: 36px;
+        color: #30619A;
+        letter-spacing: 0;
+        line-height: 36px;
+      }
+      p {
+        font-size: 20px;
+        color: #30619A;
+        letter-spacing: 0;
+        line-height: 30px;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .content_text > div:nth-child(3), .content_text > div:nth-child(4) {
+        margin-top: 70px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      height: 750px;
+      .content_text > div:nth-child(3), .content_text > div:nth-child(4) {
+        margin-top: 0;
+      }
+
+      .content_text {
+        h4 {
+          text-align: center;
+        }
+      }
+    }
+    @media screen and (max-width: 480px) {
+      height: 1150px;
+      .content_text > div:nth-child(3), .content_text > div:nth-child(4) {
+        margin-top: 0;
+      }
+
+      .content_text {
+        h4 {
+          text-align: center;
+          font-size: 28px;
+        }
+        p {
+          text-align: center;
+          font-size: 15px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+  //投放量级取决事项
+  .put_base, .integral_wall_res, .charge_type, .examples {
+    .content_text {
+      h3, p {
+        font-size: 20px;
+      }
+      p {
+        padding-left: 20px;
+      }
+      img {
+        width: 415px;
+        height: 131px;
+        margin-top: 30px;
+      }
+    }
+  }
+  .put_base {
+    height: 700px;
+    background: #F6F6F6;
+    .title {
+      b {
+        border-bottom: 5px solid #6e6e6e;
+        color: #666;
+      }
+    }
+    @media screen and(max-width: 768px) {
+      height: 750px;
+      .content_text {
+        img {
+          margin-top: 0;
+        }
+      }
+    }
+    @media screen and(max-width: 480px) {
+      height: 1000px;
+    }
+    @media screen and(max-width: 320px) {
+      height: 850px;
+      .content_text {
+        h3, p {
+          font-size: 16px;
+        }
+        p {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  .integral_wall_res {
+    height: 565px;
+    background: #fff;
+    .title {
+      b {
+        border-bottom: 5px solid #6e6e6e;
+        color: #666;
+      }
+    }
+    @media screen and(max-width: 768px) {
+      height: 600px;
+    }
+    @media screen and(max-width: 480px) {
+      height: 850px;
+    }
+    @media screen and(max-width: 320px) {
+      height: 700px;
+      .content_text {
+        h3, p {
+          font-size: 16px;
+        }
+        p {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  .charge_type {
+    height: 450px;
+    background: #F6F6F6;
+    .title {
+      b {
+        border-bottom: 5px solid #6e6e6e;
+        color: #666;
+      }
+    }
+    @media screen and(max-width: 768px) {
+      height: 500px;
+    }
+    @media screen and(max-width: 480px) {
+      height: 580px;
+    }
+    @media screen and(max-width: 320px) {
+      height: 500px;
+      .content_text {
+        h3, p {
+          font-size: 16px;
+        }
+        p {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  .examples {
+    height: 351px;
+    background: #fff;
+    .title {
+      b {
+        border-bottom: 5px solid #6e6e6e;
+        color: #666;
+      }
+    }
+    @media screen and(max-width: 768px) {
+      height: 400px;
+    }
+    @media screen and(max-width: 480px) {
+      height: 530px;
+      .content_text {
+        img {
+          margin-top: 0;
+        }
+      }
+    }
+    @media screen and(max-width: 320px) {
+      height: 500px;
+      .content_text {
+        h3, p {
+          font-size: 16px;
+        }
+        p {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+//苹果刷机
+section.ios_root {
+  margin-top: 50px;
+  //大banner
+  .banner {
+    width: 100%;
+    height: 500px;
+    box-sizing: border-box;
+    background-image: linear-gradient(-162deg, #68C3DD 12%, #79B5EB 94%);
+    background-size: cover;
+    .banner_box {
+      margin-top: 100px;
+      .banner_img {
+        padding-left: 30px;
+        img {
+          width: 270px;
+          height: 270px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      .banner_text {
+        padding-left: 30px;
+        padding-top: 15px;
+        h1 {
+          font-size: 48px;
+          color: #FFFFFF;
+          line-height: 82px;
+        }
+        p {
+          font-size: 26px;
+          color: #FFFFFF;
+          line-height: 42px;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      height: 300px;
+      .banner_box {
+        margin: 20px 0;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      height: 230px;
+      .banner_box {
+        .banner_img {
+          padding: 0;
+          img {
+            width: 170px;
+            height: 170px;
+          }
+        }
+        .banner_text {
+          padding: 0;
+          h1 {
+            font-size: 36px;
+            line-height: 42px;
+          }
+          p {
+            font-size: 26px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 320px) {
+      height: 200px;
+      .banner_box {
+        .banner_img {
+          padding: 0;
+          img {
+            width: 150px;
+            height: 150px;
+          }
+        }
+        .banner_text {
+          padding: 0;
+          h1 {
+            font-size: 24px;
+            line-height: 30px;
+          }
+          p {
+            font-size: 18px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+  //中国榜,国外榜和实例
+  .crunchies, .examples {
+    width: 100%;
+    .title {
+      margin-top: 30px;
+      overflow: hidden;
+      padding: 5px 0;
+      b {
+        font-size: 36px;
+        line-height: 60px;
+        padding-bottom: 10px;
+        border-bottom: 5px solid #5E98D1;
+        color: #2F619A;
+      }
+    }
+    .content_text {
+      margin-top: 40px;
+      h3, p {
+        font-size: 20px;
+        color: #666;
+      }
+      img {
+        width: 262px;
+        height: 211px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+  .crunchies {
+    height: 800px;
+    .container:last-child {
+      .content_text:last-child img {
+        width: 195px;
+        height: 199px;
+        margin-top: -30px;
+      }
+    }
+  }
+  @media screen and(max-width: 480px) {
+    .crunchies {
+      height: 1200px;
+      .container:last-child {
+        .content_text:last-child img {
+          margin-top: 0;
+        }
+      }
+      .content_text {
+        img {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  @media screen and(max-width: 320px) {
+    .crunchies {
+      height: 1100px;
+      .content_text {
+        img {
+          margin-top: -30px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+  //投放量级取决事项
+  .examples {
+    height: 351px;
+    background: #fff;
+    .title {
+      b {
+        border-bottom: 5px solid #6e6e6e;
+        color: #666;
+      }
+    }
+    .content_text {
+      h3, p {
+        font-size: 20px;
+      }
+      img {
+        width: 415px;
+        height: 131px;
+      }
+    }
+    @media screen and(max-width: 768px) {
+      height: 380px;
+    }
+    @media screen and(max-width: 480px) {
+      height: 550px;
+    }
+    @media screen and(max-width: 320px) {
+      height: 500px;
+      .content_text {
+        p {
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+//手游联运
+section.hand_travel {
+  margin-top: 50px;
+  //大banner
+  .banner {
+    height: 500px;
+    background: url("../images/hand_travel_bg.png") no-repeat;
+    background-size: cover;
+    .banner_box {
+      margin-top: 157px;
+      .banner_text {
+        text-align: left;
+        h1 {
+          font-size: 36px;
+          color: #fff;
+          line-height: 40px;
+          margin-top: 10px;
+        }
+        p {
+          font-size: 20px;
+          color: #fff;
+          line-height: 25px;
+          margin-bottom: 20px;
+        }
+      }
+      .banner_img {
+        margin-top: -37px;
+        img {
+          width: 415px;
+          height: 225px;
+          display: block;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) and (min-width: 480px) {
+      background: url("../images/hand_travel_bg.png") 50% 50% no-repeat;
+      background-size: cover;
+    }
+    @media screen and (max-width: 480px) {
+      height: 205px;
+      .banner_box {
+        margin-top: 50px;
+        .banner_text {
+          text-align: left;
+          h1 {
+            font-size: 36px;
+            color: #fff;
+            line-height: 40px;
+            margin-top: 10px;
+          }
+          p {
+            font-size: 20px;
+            color: #fff;
+            line-height: 25px;
+            margin-bottom: 20px;
+          }
+        }
+        .banner_img {
+          display: none;
+        }
+      }
+    }
+    @media screen and(max-width: 320px) {
+      .banner_box {
+        margin-top: 35px;
+        .banner_text {
+          h1 {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+  //手游联运
+  .hand_travel {
+    height: 678px;
+    background: #fff;
+    .title {
+      margin-top: 30px;
+      overflow: hidden;
+      padding: 5px 0;
+      b {
+        font-size: 36px;
+        line-height: 60px;
+        padding-bottom: 10px;
+        border-bottom: 5px solid #5E98D1;
+        color: #2F619A;
+      }
+    }
+    .content_text {
+      margin-top: 40px;
+      p {
+        font-size: 20px;
+        color: #2F619A;
+      }
+      ul {
+        padding: 0;
+        li {
+          width: 20%;
+          list-style: none;
+          float: left;
+          img {
+            width: 110px;
+            height: 110px;
+            display: block;
+            margin: 0 auto;
+          }
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+    @media screen and(max-width: 768px) {
+      height: 740px;
+      .content_text {
+        ul {
+          li {
+            width: 33%;
+            margin: 0 auto;
+          }
+          li:nth-child(4), li:nth-child(5) {
+            width: 50%;
+          }
+        }
+      }
+    }
+    @media screen and(max-width: 320px) {
+      height:650px;
+      .content_text {
+        margin-top: 40px;
+        p {
+          font-size: 16px;
+        }
+        ul {
+          li {
+            img {
+              width: 90px;
+              height: 90px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//苹果关键词覆盖
+section.ios_key {
+  margin-top: 50px;
+  .banner {
+    width: 100%;
+    background: #fff;
+    .title {
+      margin-top: 30px;
+      overflow: hidden;
+      padding: 5px 0;
+      b {
+        font-size: 36px;
+        line-height: 60px;
+        padding-bottom: 10px;
+        border-bottom: 5px solid #5E98D1;
+        color: #2F619A;
+      }
+    }
+    .banner_box {
+      .banner_img {
+        padding-left: 120px;
+        padding-top: 80px;
+        img {
+          width: 245px;
+          height: 235px;
+        }
+        @media screen and (max-width: 767px) {
+          img {
+            width: 80px;
+            height: 92px;
+          }
+        }
+      }
+      .banner_text {
+        padding-left: 30px;
+        padding-top: 15px;
+        h3 {
+          font-size: 20px;
+          color: #30619A;
+          line-height: 42px;
+        }
+        p {
+          font-size: 20px;
+          color: #30619A;
+          line-height: 42px;
+        }
+        @media screen and (max-width: 479px) {
+          h1 {
+            font-size: 24px;
+            line-height: 30px;
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//海外及ASM
+section.abroad_and_asm {
+  margin-top: 50px;
+  .ios_abroad_root, .ios_abroad_asm {
+    background: #fff;
+    height: 600px;
+    @media screen and (max-width: 480px) {
+      height: 800px;
+    }
+    @media screen and(max-width: 320px) {
+      height: 680px;
+    }
+    .title {
+      margin-top: 30px;
+      overflow: hidden;
+      padding: 5px 0;
+      b {
+        font-size: 36px;
+        line-height: 60px;
+        padding-bottom: 10px;
+        border-bottom: 5px solid #5E98D1;
+        color: #2F619A;
+      }
+    }
+    .content_text {
+      padding-top: 30px;
+      h3, p {
+        font-size: 20px;
+        color: #30619A;
+        padding-left: 20px;
+      }
+      img {
+        width: 195px;
+        height: 200px;
+        display: block;
+        margin: 30px 0 0 100px;
+      }
+      @media screen and(max-width: 480px) {
+        padding-top: 0;
+        img {
+          margin: 30px auto;
+        }
+      }
+      @media screen and(max-width: 480px) {
+        padding-top: 0;
+        img {
+          margin: 30px auto;
+        }
+      }
+      @media screen and(max-width: 320px) {
+        h3, p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .ios_abroad_asm {
+    background: #f6f6f6;
+    height: 420px;
+    @media screen and(max-width: 480px) {
+      height: 500px;
+    }
+    @media screen and(max-width: 320px) {
+      height: 450px;
+    }
+    .title {
+      b {
+        border-bottom: 5px solid #6e6e6e;
+        color: #666;
+      }
+    }
+    .content_text {
+      padding-top: 60px;
+      h3, p {
+        color: #666;
+      }
+      img {
+        margin: -30px 0 0;
+      }
+      @media screen and(max-width: 480px) {
+        img {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+//安卓刷量及评价
+section.android_brush {
+  margin-top: 50px;
+  .android_brush_content {
+    height: 800px;
+    @media screen and(max-width: 768px) {
+      height: 780px;
+    }
+    @media screen and(max-width: 480px) {
+      height: 850px;
+    }
+    background: #fff;
+    .title {
+      margin-top: 30px;
+      overflow: hidden;
+      padding: 5px 0;
+      b {
+        font-size: 36px;
+        line-height: 60px;
+        padding-bottom: 10px;
+        border-bottom: 5px solid #5E98D1;
+        color: #2F619A;
+      }
+    }
+    .content_text {
+      h3 {
+        font-size: 20px;
+        color: #30619A;
+        line-height: 80px;
+      }
+      p {
+        text-align: center;
+        font-size: 20px;
+        color: #30619A;
+        line-height: 60px;
+      }
+      img {
+        width: 75px;
+        height: 75px;
+        display: block;
+        margin: 0 auto;
+      }
+      @media screen and(min-width: 768px) {
+        div.col-xs-3 {
+          width: 14%;
+        }
+      }
+      @media screen and(max-width: 480px) {
+        div.col-xs-3 {
+          width: 25%;
+        }
+
+        h3 {
+          line-height: 50px;
+        }
+
+        p {
+          text-align: center;
+          font-size: 14px;
+          color: #30619A;
+          line-height: 40px;
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      @media screen and(max-width: 320px) {
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+//安卓关键词覆盖、苹果关键词覆盖
+section.android_key, section.ios_key {
+  margin-top: 50px;
+  .android_key_content, .ios_key_content {
+    background: #fff;
+    height: 600px;
+    @media screen and (max-width: 480px) {
+      height: 700px;
+    }
+    @media screen and (max-width: 320px) {
+      height: 650px;
+    }
+    .title {
+      margin-top: 30px;
+      overflow: hidden;
+      padding: 5px 0;
+      b {
+        font-size: 36px;
+        line-height: 60px;
+        padding-bottom: 10px;
+        border-bottom: 5px solid #5E98D1;
+        color: #2F619A;
+      }
+    }
+    .content_text {
+      padding-top: 30px;
+      p, h3 {
+        font-size: 20px;
+        color: #30619A;
+        text-indent: 30px;
+      }
+      @media screen and (max-width: 320px) {
+        p {
+          font-size: 16px;
+        }
+      }
+      img {
+        width: 245px;
+        height: 235px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+  .ios_key_content {
+    @media screen and (max-width: 480px) {
+      height: 750px;
+    }
+    .content_text {
+      p, h3 {
+        text-indent: 0;
+      }
+    }
+  }
+}
+
+//安卓积分墙
+section.android_integral_wall {
+
+}
+
+
+
+
+
+
+
+
