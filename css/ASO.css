@@ -182,77 +182,6 @@ td,
 th {
   padding: 0;
 }
-/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
-@media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
-  }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  thead {
-    display: table-header-group;
-  }
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-  img {
-    max-width: 100% !important;
-  }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-  .navbar {
-    display: none;
-  }
-  .btn > .caret,
-  .dropup > .btn > .caret {
-    border-top-color: #000 !important;
-  }
-  .label {
-    border: 1px solid #000;
-  }
-  .table {
-    border-collapse: collapse !important;
-  }
-  .table td,
-  .table th {
-    background-color: #fff !important;
-  }
-  .table-bordered th,
-  .table-bordered td {
-    border: 1px solid #ddd !important;
-  }
-}
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('../fonts/glyphicons-halflings-regular.eot');
@@ -2744,38 +2673,6 @@ select[multiple].input-lg {
     font-size: 12px;
   }
 }
-.fade {
-  opacity: 0;
-  -webkit-transition: opacity 0.15s linear;
-  -o-transition: opacity 0.15s linear;
-  transition: opacity 0.15s linear;
-}
-.fade.in {
-  opacity: 1;
-}
-.collapse {
-  display: none;
-}
-.collapse.in {
-  display: block;
-}
-tr.collapse.in {
-  display: table-row;
-}
-tbody.collapse.in {
-  display: table-row-group;
-}
-.collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  -webkit-transition-property: height, visibility;
-  transition-property: height, visibility;
-  -webkit-transition-duration: 0.35s;
-  transition-duration: 0.35s;
-  -webkit-transition-timing-function: ease;
-  transition-timing-function: ease;
-}
 .caret {
   display: inline-block;
   width: 0;
@@ -4225,7 +4122,7 @@ button.list-group-item-danger.active:focus {
 }
 body {
   color: #000;
-  font-family: Arial, Helvetica, sans-serif, '华文细黑';
+  font-family: "PingFangSC-Regular", "苹方", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   background: #f0eff5;
   position: relative;
 }
@@ -5058,12 +4955,14 @@ section.ios_integral_wall .integral_wall_res .content_text p,
 section.ios_integral_wall .charge_type .content_text p,
 section.ios_integral_wall .examples .content_text p {
   font-size: 20px;
+  color: #666;
 }
 section.ios_integral_wall .put_base .content_text p,
 section.ios_integral_wall .integral_wall_res .content_text p,
 section.ios_integral_wall .charge_type .content_text p,
 section.ios_integral_wall .examples .content_text p {
   padding-left: 20px;
+  color: #666;
 }
 section.ios_integral_wall .put_base .content_text img,
 section.ios_integral_wall .integral_wall_res .content_text img,
